@@ -72,11 +72,11 @@ enum EzioAuditoreDaFirenzeCondition implements Condition {
 
     @Override
     public boolean apply(Game game, Ability source) {
-        Player player = game.getPlayer(getTargetPointer().getFirst(game, source));
-        if (player == null) {
+        Player target = game.getPlayer(game.getCombat().getDefendingPlayerId(source.getSourceId(), game));
+        if (target == null) {
             return false;
         }
-        if  (mapToInt(Player::getlife) <= 10){
+        if  (target.getLife() <= 10){
             return true;
         }
         else {

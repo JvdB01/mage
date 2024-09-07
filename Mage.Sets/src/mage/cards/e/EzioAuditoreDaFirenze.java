@@ -84,3 +84,14 @@ enum EzioAuditoreDaFirenzeCondition implements Condition {
         }
     }
 }
+
+class EzioAuditoreDaFirenzeTriggeredAbility extends DealsCombatDamageToAPlayerTriggeredAbility {
+
+    public EzioAuditoreDaFirenzeTriggeredAbility() {
+        super(new EzioAuditoreDaFirenzeEffect(), false);
+    }
+
+    private EzioAuditoreDaFirenzeTriggeredAbility(final EzioAuditoreDaFirenzeTriggeredAbility ability) {
+        super(ability);
+    }
+}
